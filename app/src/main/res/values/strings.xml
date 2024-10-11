@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Gas Calculation</string>
+    <string name="cancel">Cancel</string>
+    <string name="add_location">Add Location</string>
+    <string name="enter_location_name">Enter location Name</string>
+    <string name="use_current_location">Use Current Location</string>
+    <string name="enter_the_address_or_use_current_location">Enter the Address or Use Current Location.</string>
+    <string name="title_activity_result">ResultActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="lat">Lat:</string>
+    <string name="todo">TODO</string>
+    <string name="lon">, Lon:</string>
+</resources>

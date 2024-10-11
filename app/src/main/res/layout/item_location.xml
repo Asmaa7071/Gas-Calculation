@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="locationItem"
+            type="com.example.gascalculation.LocationItem" />
+    </data>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="3dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp">
+
+            <!-- Location Icon -->
+            <ImageView
+                android:id="@+id/location_icon"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginEnd="8dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/pin_location"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+                <!-- Location Name -->
+            <TextView
+                android:id="@+id/location_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                tools:text="Al Hadiqah Ad Dawleyah"
+                android:text="@{locationItem.locationName}"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginStart="8dp"
+                app:layout_constraintEnd_toStartOf="@+id/location_menu"
+                app:layout_constraintStart_toEndOf="@id/location_icon"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/lat"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                tools:text="Lat: "
+                android:text="@string/lat"
+                android:textSize="16sp"
+                android:maxLength="8"
+                app:layout_constraintStart_toStartOf="@+id/location_name"
+                app:layout_constraintTop_toBottomOf="@id/location_name"/>
+
+            <TextView
+                android:id="@+id/location_latitude"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                tools:text="30.0377"
+                android:text="@{locationItem.latitude.toString()}"
+                android:textSize="16sp"
+                android:maxLength="8"
+                app:layout_constraintStart_toEndOf="@id/lat"
+                app:layout_constraintTop_toTopOf="@id/lat"
+                app:layout_constraintBottom_toBottomOf="@id/lat"/>
+
+            <TextView
+                android:id="@+id/lon"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                tools:text=", Lon: "
+                android:text="@string/lon"
+                android:textSize="16sp"
+                android:maxLength="7"
+                app:layout_constraintStart_toEndOf="@+id/location_latitude"
+                app:layout_constraintTop_toTopOf="@id/lat"
+                app:layout_constraintBottom_toBottomOf="@id/lat"/>
+
+            <TextView
+                android:id="@+id/location_longitude"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                tools:text="31.3381"
+                android:text="@{locationItem.longitude.toString()}"
+                android:textSize="16sp"
+                android:maxLength="7"
+                app:layout_constraintStart_toEndOf="@id/lon"
+                app:layout_constraintTop_toTopOf="@id/lat"
+                app:layout_constraintBottom_toBottomOf="@id/lat"/>
+
+            <ImageView
+                android:id="@+id/location_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/menu_duo_lg_svgrepo_com"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
